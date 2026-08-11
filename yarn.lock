@@ -8100,16 +8100,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-android-notification-listener@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "react-native-android-notification-listener@npm:5.0.1"
-  peerDependencies:
-    react: ^18.0.0
-    react-native: ">=0.69.0"
-  checksum: 10c0/72a88053bf5b23f322d918e110ee4857499abac67c006d948d537548c0c393a2a218b72d3fce8e3a94a9eab4d55549a578cfb31b7fffe0fda76fcaa5d8195840
-  languageName: node
-  linkType: hard
-
 "react-native-animatable@npm:1.4.0":
   version: 1.4.0
   resolution: "react-native-animatable@npm:1.4.0"
@@ -9539,7 +9529,6 @@ react-native-background-timer@koten551/react-native-background-timer.git:
     prettier: "npm:2.8.8"
     react: "npm:19.2.3"
     react-native: "npm:0.86.2"
-    react-native-android-notification-listener: "npm:^5.0.1"
     react-native-background-timer: koten551/react-native-background-timer.git
     react-native-bluetooth-serial-next: "patch:react-native-bluetooth-serial-next@npm%3A1.2.3#~/.yarn/patches/react-native-bluetooth-serial-next-npm-1.2.3-74260d400d.patch"
     react-native-device-info: "npm:^15.0.2"

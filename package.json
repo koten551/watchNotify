@@ -17,7 +17,6 @@
     "lodash": "^4.18.1",
     "react": "19.2.3",
     "react-native": "0.86.2",
-    "react-native-android-notification-listener": "^5.0.1",
     "react-native-background-timer": "koten551/react-native-background-timer.git",
     "react-native-bluetooth-serial-next": "patch:react-native-bluetooth-serial-next@npm%3A1.2.3#~/.yarn/patches/react-native-bluetooth-serial-next-npm-1.2.3-74260d400d.patch",
     "react-native-device-info": "^15.0.2",

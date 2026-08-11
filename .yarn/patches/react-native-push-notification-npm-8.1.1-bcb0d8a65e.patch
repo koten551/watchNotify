@@ -1,0 +1,58 @@
+diff --git a/android/build.gradle b/android/build.gradle
+index d6019f61c32172db04eeecb85d87d4ef506ee8e6..0ca162a72a6582d36de61685643f1ef896da6790 100644
+--- a/android/build.gradle
++++ b/android/build.gradle
+@@ -2,7 +2,6 @@ buildscript {
+     repositories {
+         mavenCentral()
+         google()
+-        jcenter()
+     }
+     dependencies {
+         classpath 'com.android.tools.build:gradle:3.2.0'
+@@ -13,7 +12,6 @@ allprojects {
+     repositories {
+         mavenCentral()
+         google()
+-        jcenter()
+     }
+ }
+ 
+@@ -24,8 +22,9 @@ def safeExtGet(prop, fallback) {
+ }
+ 
+ android {
+-    compileSdkVersion safeExtGet('compileSdkVersion', 28)
+-    buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
++    namespace "com.dieam.reactnativepushnotification"
++    compileSdkVersion safeExtGet('compileSdkVersion', 36)
++    buildToolsVersion safeExtGet('buildToolsVersion', '36.0.0')
+ 
+     compileOptions {
+         sourceCompatibility JavaVersion.VERSION_1_8
+@@ -34,7 +33,7 @@ android {
+ 
+     defaultConfig {
+         minSdkVersion safeExtGet('minSdkVersion', 16)
+-        targetSdkVersion safeExtGet('targetSdkVersion', 28)
++        targetSdkVersion safeExtGet('targetSdkVersion', 36)
+         versionCode 1
+         versionName "1.0"
+         ndk {
+@@ -50,14 +49,11 @@ android {
+ }
+ 
+ dependencies {
+-    // Use either AndroidX library names or old/support library names based on major version of support lib
+-    def supportLibVersion = safeExtGet('supportLibVersion', '27.1.1')
+-    def supportLibMajorVersion = supportLibVersion.split('\\.')[0] as int
+-    def appCompatLibName =  (supportLibMajorVersion < 20) ? "androidx.appcompat:appcompat" : "com.android.support:appcompat-v7"
++    def appCompatVersion = safeExtGet('appCompatVersion', '1.7.0')
+ 
+     implementation fileTree(dir: 'libs', include: ['*.jar'])
+     testImplementation 'junit:junit:4.12'
+-    implementation "$appCompatLibName:$supportLibVersion"
++    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+     implementation 'com.facebook.react:react-native:+'
+     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+     implementation "com.google.firebase:firebase-messaging:${safeExtGet('firebaseMessagingVersion', '21.1.0')}"

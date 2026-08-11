@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "561215441045",
+    "project_id": "rnwatchnotification",
+    "storage_bucket": "rnwatchnotification.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561215441045:android:b706d4797accba310d739c",
+        "android_client_info": {
+          "package_name": "com.rnwatchnotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc93E9XxEt668Mi6poeINNjPKKzM2EZ0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561215441045:android:8b207f82b4c872890d739c",
+        "android_client_info": {
+          "package_name": "com.watchnotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc93E9XxEt668Mi6poeINNjPKKzM2EZ0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

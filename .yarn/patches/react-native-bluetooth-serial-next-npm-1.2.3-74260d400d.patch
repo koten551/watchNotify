@@ -1,0 +1,57 @@
+diff --git a/android/build.gradle b/android/build.gradle
+index cd10efdf99474b2fcd9efcd8d3d85dd69d037776..223dc57f68d0ae25d72703189183734f831682c7 100644
+--- a/android/build.gradle
++++ b/android/build.gradle
+@@ -1,7 +1,7 @@
+ buildscript {
+     repositories {
+         google()
+-        jcenter()
++        mavenCentral()
+     }
+ 
+     dependencies {
+@@ -12,11 +12,11 @@ buildscript {
+ apply plugin: 'com.android.library'
+ 
+ android {
+-    compileSdkVersion 27
++    compileSdkVersion rootProject.ext.has('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
+ 
+     defaultConfig {
+         minSdkVersion 16
+-        targetSdkVersion 27
++        targetSdkVersion rootProject.ext.has('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 36
+         versionCode 1
+         versionName "1.0"
+         ndk {
+@@ -26,8 +26,8 @@ android {
+ }
+ 
+ repositories {
+-    jcenter()
+     google()
++    mavenCentral()
+     maven {
+         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+         url "$rootDir/../node_modules/react-native/android"
+diff --git a/index.js b/index.js
+index 8a4ff15f9540fe39a05c32fd0c7de06340f11a79..d1a2fcff00bc849e7b5d8a00cd321a8e43f01aaa 100644
+--- a/index.js
++++ b/index.js
+@@ -3,7 +3,14 @@ const React = require("react");
+ const { Buffer } = require("buffer");
+ 
+ const { NativeModules, DeviceEventEmitter } = ReactNative;
+-const { BluetoothSerial } = NativeModules;
++const BluetoothSerial = NativeModules.BluetoothSerial || NativeModules.RCTBluetoothSerial;
++
++if (!BluetoothSerial) {
++  throw new Error(
++    "react-native-bluetooth-serial-next native module is not available. " +
++      "Make sure RCTBluetoothSerialPackage is linked and rebuild the Android app."
++  );
++}
+ 
+ /**
+  * High order component that will

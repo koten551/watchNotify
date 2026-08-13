@@ -22,6 +22,7 @@ import DeviceInfo from 'react-native-device-info';
 import { gMaps } from '../configs';
 import Setup from './setup';
 import { AppDetail } from 'react-native-launcher-kit/lib/typescript/interfaces/InstalledApps';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   const { removeAppNotify, appNotify, setAppNotify, setupStatus } = deviceStore(
@@ -65,7 +66,12 @@ const App = () => {
       </View>
     );
 
-  if (!setupStatus) return <Setup />;
+  if (!setupStatus)
+    return (
+      <NavigationContainer>
+        <Setup />
+      </NavigationContainer>
+    );
   return (
     <>
       <View style={styles.container}>
